@@ -8,7 +8,7 @@ steps:
 - task: NodeTool@0
   inputs:
     versionSource: 'spec'
-    versionSpec: '18.x'  # Specify a valid Node.js version
+    versionSpec: '22.11.0'  # Specify a valid Node.js version
   displayName: 'Install node.js'
 
 - task: Cache@2
