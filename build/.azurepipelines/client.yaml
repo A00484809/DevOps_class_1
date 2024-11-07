@@ -1,5 +1,6 @@
 trigger:
 - main
+
 pool:
   vmImage: ubuntu-latest
 
@@ -7,19 +8,30 @@ steps:
 - task: NodeTool@0
   inputs:
     versionSource: 'spec'
-    versionSpec: '22.11.0'
+    versionSpec: '18.x'  # Specify a valid Node.js version
   displayName: 'Install node.js'
 
-- script: npm ci
+- task: Cache@2
+  inputs:
+    key: 'npm | "$(Agent.OS)" | package-lock.json'
+    path: 'src/devops_class_1.client/node_modules'
+    cacheHitVar: 'NODE_MODULES_RESTORED'
+  displayName: 'Cache npm dependencies'
 
+- script: |
+    node -v  # Check the installed Node version
+    npm -v   # Check the installed npm version
+  displayName: 'Check Node and npm versions'
 
 - script: | 
-   cd src/devops_class_1.client
-   npm install 
-   npm run build 
-  displayName: 'npm install and build'
+    cd src/devops_class_1.client
+    npm install --verbose  # Install dependencies with verbose logging
+    npm run build --verbose  # Run the build command with verbose logging
+  displayName: 'npm install and build with verbose logging'
+
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: 'src/devops_class_1.client'
     ArtifactName: 'drop'
     publishLocation: 'Container'
+  displayName: 'Publish Build Artifacts'
