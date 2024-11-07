@@ -6,6 +6,6 @@
     "\\src",
     "\\src\\DevOps_class_1.Server"
   ],
-  "SelectedNode": "\\build\\.azurepipelines",
+  "SelectedNode": "\\build\\.azurepipelines\\server.yaml",
   "PreviewInSolutionExplorer": false
 }
