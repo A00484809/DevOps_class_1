@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "Yihwr0M4M2Ts6Vqo/47IW7h9DJ+jzVQXTZ6ModdLKiQ=",
+  "Source": "DevOps_class_1.Server",
+  "BasePath": "_content/DevOps_class_1.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\Users\\Library\\Documents\\sde\\react_devop_pract\\DevOps_class_1\\src\\devops_class_1.client\\devops_class_1.client.esproj",
+      "Version": 2,
+      "Source": "devops_class_1.client",
+      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
