@@ -8,25 +8,25 @@ steps:
 - task: NodeTool@0
   inputs:
     versionSource: 'spec'
-    versionSpec: '22.11.0'  # Specify a valid Node.js version
+    versionSpec: '22.11.0'  # Ensure the Node.js version is compatible
   displayName: 'Install node.js'
 
 - task: Cache@2
   inputs:
-    key: 'npm | "$(Agent.OS)" | package-lock.json'
-    path: 'src/devops_class_1.client/node_modules'
+    key: 'npm | "$(Agent.OS)" | $(Build.SourcesDirectory)/package-lock.json'  # Cache based on package-lock.json
+    path: 'src/devops_class_1.client/node_modules'  # Path to node_modules
     cacheHitVar: 'NODE_MODULES_RESTORED'
   displayName: 'Cache npm dependencies'
 
 - script: |
-    node -v  # Check the installed Node version
-    npm -v   # Check the installed npm version
+    node -v  # Check installed Node version
+    npm -v   # Check installed npm version
   displayName: 'Check Node and npm versions'
 
 - script: | 
     cd src/devops_class_1.client
-    npm install --verbose  # Install dependencies with verbose logging
-    npm run build --verbose  # Run the build command with verbose logging
+    npm install --verbose  # Install dependencies using npm install
+    npm run build --verbose  # Run the build command
   displayName: 'npm install and build with verbose logging'
 
 - task: PublishBuildArtifacts@1
