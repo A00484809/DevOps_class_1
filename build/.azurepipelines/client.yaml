@@ -9,13 +9,9 @@ steps:
     versionSource: 'spec'
     versionSpec: '22.11.0'
   displayName: 'Install node.js'
-- task: Npm@1
-  inputs:
-    customCommand: 'npm install && npm run build'
-    workingDir: '$(Build.ArtifactStagingDirectory)/DevOps_class_1/tree/main/src/devops_class_1.client'
+
+- script: | 
+   cd src/devops_class_1.client
+   npm install 
+   npm run build 
   displayName: 'npm install and build'
-- task: PublishBuildArtifacts@1
-  inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)/DevOps_class_1/tree/main/src/devops_class_1.client'
-    ArtifactName: 'drop'
-    publishLocation: 'Container'
