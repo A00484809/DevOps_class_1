@@ -4,8 +4,9 @@
     "\\build",
     "\\build\\.azurepipelines",
     "\\src",
+    "\\src\\devops_class_1.client",
     "\\src\\DevOps_class_1.Server"
   ],
-  "SelectedNode": "\\build\\.azurepipelines\\server.yaml",
+  "SelectedNode": "\\src\\devops_class_1.client\\package-lock.json",
   "PreviewInSolutionExplorer": false
 }
