@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MCDA_Project.Server.props" />
+</Project>

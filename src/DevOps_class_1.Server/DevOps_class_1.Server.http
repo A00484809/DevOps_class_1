@@ -1,6 +1,0 @@
-@DevOps_class_1.Server_HostAddress = http://localhost:5216
-
-GET {{DevOps_class_1.Server_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
